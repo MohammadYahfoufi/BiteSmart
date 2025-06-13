@@ -72,26 +72,27 @@ drivers/
 food/
   {foodId} → name, price, stock, defaultStock, category, image
 ```
----
-
 ## 📸 Screenshots
 
-### 🧑 Customer Experience
+<details>
+<summary>🧑 Customer Screens</summary>
 
 ![CustomerPage](screenshots/CustomerPage.png)  
 ![YourOrders](screenshots/YourOrders.png)  
 ![Tracking](screenshots/Tracking.png)  
 ![ContactUs](screenshots/contactus.png)
 
----
+</details>
 
-### 🧑‍✈️ Driver Experience
+<details>
+<summary>🧑‍✈️ Driver Screens</summary>
 
 ![DriversPage](screenshots/DriversPage.png)
 
----
+</details>
 
-### 🛠️ Admin Dashboard
+<details>
+<summary>🛠️ Admin Screens</summary>
 
 ![AdminDashboard](screenshots/AdminDashboard.png)  
 ![adminOrdersPage](screenshots/adminOrdersPage.png)  
@@ -101,11 +102,14 @@ food/
 ![floatingbuttonAdmin](screenshots/floatingbuttonAdmin.png)  
 ![pageToAssign](screenshots/pageToAssign.png)
 
----
+</details>
 
-### 🔐 Authentication Screens
+<details>
+<summary>🔐 Authentication Screens</summary>
 
 ![Login](screenshots/Login.png)  
 ![Register](screenshots/Register.png)  
 ![RegisterDriver](screenshots/RegisterDriver.png)  
 ![Logout](screenshots/logout.png)
+
+</details>
