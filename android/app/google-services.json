@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "539597659391",
+    "project_id": "hungertrack",
+    "storage_bucket": "hungertrack.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539597659391:android:aeb01750cfa310bb2b00ca",
+        "android_client_info": {
+          "package_name": "com.example.hungertrack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539597659391-3iatmbaohhiqjk3cmf2eosvrrtpsgsfo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hungertrack",
+            "certificate_hash": "fb34f3c2c6e46d839dda083cb853d4e2b2fd3543"
+          }
+        },
+        {
+          "client_id": "539597659391-n2a3if8ebgpecsvf0mqvcld54paunjbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV_2_NV9O_5qDl0alhINPQ1nJsaEmjCKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539597659391-n2a3if8ebgpecsvf0mqvcld54paunjbk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
