@@ -47,11 +47,11 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
     setState(() => _isSending = true);
 
     try {
-      final smtpServer = gmail('hadijaafar624@gmail.com', 'ooynkwusqnxvpnby');
+      final smtpServer = gmail('@gmail.com', '');
 
       final emailMessage = Message()
-        ..from = Address('hadijaafar624@gmail.com', 'BiteSmart Support')
-        ..recipients.add('hadijaafar624@example.com')
+        ..from = Address('@gmail.com', 'BiteSmart Support')
+        ..recipients.add('@example.com')
         ..subject = "Contact from $_userName ($_userEmail): ${_subjectController.text}"
         ..text = """
 User: $_userName
