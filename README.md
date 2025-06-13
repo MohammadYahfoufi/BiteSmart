@@ -1,104 +1,72 @@
 # 🍽️ BiteSmart – Flutter + Firebase Food Delivery App
 
-**BiteSmart** is a cross-platform mobile food delivery app built with Flutter and Firebase.  
-It supports real-time orders, delivery tracking, driver assignment, daily stock management, push notifications, and role-based access control for **Admins**, **Drivers**, and **Customers**.
+**BiteSmart** is a modern food delivery mobile app for single-restaurant use.  
+Built with **Flutter** and **Firebase**, it supports real-time ordering, driver tracking, admin stock control, push notifications, and role-based access.
 
 ---
 
-## 👥 User Roles & Permissions
+## 👥 Roles & Permissions
 
 ### 👤 Customer
-- Register & login
-- Browse food items
-- Place orders (based on stock availability)
-- Track driver location when assigned
-- View order history
-- In-app support (chatbot popup)
+- Browse food by category
+- Add to cart and place orders
+- Track delivery live
+- View previous orders
+- Contact support via in-app chatbot
 
 ### 🚚 Driver
-- Login with assigned credentials
-- View orders assigned to them
-- Mark orders as delivered
-- Become unavailable once assigned
-- Receive push notifications when assigned
+- View assigned deliveries
+- Mark deliveries as completed
+- Automatically unavailable while assigned
+- Receive push notifications for new assignments
 
 ### 🛠️ Admin
-- View all customer orders
-- Assign orders to available drivers
-- Manage driver accounts (create, view, assign)
-- View and manage food stock
-- Reset daily stock from `defaultStock`
-- Monitor order and delivery statuses in real time
+- View and assign orders to available drivers
+- Monitor order and delivery status
+- Create new driver accounts
+- Manage stock and reset it daily
 
 ---
 
-## 📦 Key Features
+## 🧠 Features Overview
 
-### ✅ Real-Time Orders
-- Orders placed by customers are immediately saved to Firestore.
-- Admins see all pending and active orders live.
-- Drivers receive assigned orders in real time via FCM.
+### 🛒 Real-Time Ordering
+- Customers place orders directly from the food menu
+- Firestore reflects changes instantly
+- Admin and driver screens update live
 
-### 📍 Delivery Tracking
-- Once a driver is assigned, customers can track their location on a map.
-- Location updates use Firestore and optional live location packages.
+### 📍 Driver Tracking
+- Driver’s location updates in real-time
+- Customers can track from order history
 
-### 🔔 Push Notifications
-- **FCM** is used to notify:
-  - Drivers: when an order is assigned to them.
-  - Customers: when their order is delivered.
+### 🔔 Notifications
+- Admin → Driver: “New Order Assigned”
+- Driver → Customer: “Order Delivered”
 
-### 🧮 Stock Management
-- Each food item has:
-  - `stock`: remaining stock for the day
-  - `defaultStock`: the reset value to apply each morning
+### 📦 Stock Management
+- Each item has:
+  - `stock`: current quantity
+  - `defaultStock`: resets daily
+- Users cannot order if item is out of stock
 
-- Users can’t order more than available `stock`.
-- A scheduled Firestore-triggered function or manual admin action resets `stock` to `defaultStock`.
-
-### 🛑 Cart Validation
-- Users cannot:
-  - Place an order if the cart is empty
-  - Exceed available stock
-- A `SnackBar` warns them appropriately
+### 🛡️ Role-based UI
+- Authentication with Firebase
+- Role (admin, driver, customer) stored in Firestore
+- UI & logic auto-adjust based on role
 
 ---
 
-## 🧠 Architecture
-
-### 🔐 Authentication
-- Firebase Authentication handles all login/registration.
-- Each user has a `role` field (`admin`, `driver`, `customer`) stored in Firestore.
-
-### 🗂️ Firestore Collections
+## 🗃️ Firestore Structure
 
 ```plaintext
 users/
-  {uid}/
-    name
-    role: admin | driver | customer
-    email
-    fcmToken
+  {uid} → name, role, email, fcmToken
 
 orders/
-  {orderId}/
-    items: [ {name, quantity, price, image} ]
-    customerId
-    driverId
-    status: pending | assigned | delivered
-    timestamp
-    deliveryLocation (GeoPoint)
+  {orderId} → items[], customerId, driverId, status, time
 
 drivers/
-  {uid}/
-    name
-    isAvailable: true/false
+  {uid} → name, isAvailable
 
 food/
-  {foodId}/
-    name
-    price
-    stock
-    defaultStock
-    category
-    image
+  {foodId} → name, price, stock, defaultStock, category, image
