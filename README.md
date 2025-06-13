@@ -65,8 +65,47 @@ users/
 orders/
   {orderId} → items[], customerId, driverId, status, time
 
+
 drivers/
   {uid} → name, isAvailable
 
 food/
   {foodId} → name, price, stock, defaultStock, category, image
+```
+---
+
+## 📸 Screenshots
+
+### 🧑 Customer Experience
+
+![CustomerPage](screenshots/CustomerPage.png)  
+![YourOrders](screenshots/YourOrders.png)  
+![Tracking](screenshots/Tracking.png)  
+![ContactUs](screenshots/contactus.png)
+
+---
+
+### 🧑‍✈️ Driver Experience
+
+![DriversPage](screenshots/DriversPage.png)
+
+---
+
+### 🛠️ Admin Dashboard
+
+![AdminDashboard](screenshots/AdminDashboard.png)  
+![adminOrdersPage](screenshots/adminOrdersPage.png)  
+![assignDriverPopup](screenshots/assignDriverPopup.png)  
+![availableDrivers](screenshots/availableDrivers.png)  
+![addFood](screenshots/addFood.png)  
+![floatingbuttonAdmin](screenshots/floatingbuttonAdmin.png)  
+![pageToAssign](screenshots/pageToAssign.png)
+
+---
+
+### 🔐 Authentication Screens
+
+![Login](screenshots/Login.png)  
+![Register](screenshots/Register.png)  
+![RegisterDriver](screenshots/RegisterDriver.png)  
+![Logout](screenshots/logout.png)
